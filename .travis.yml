@@ -13,4 +13,4 @@ script:
   - mvn -P generate-javadoc org.apache.maven.plugins:maven-javadoc-plugin:2.9.1:jar
   - sudo docker run -d -p 11179:11179 --add-host docker_host:$docker_host -t --name bgppeer1 bgppeer java -jar target/BGPPeer.jar src/test/resources/BGP4Parameters_1_IT.xml
   - mvn compile failsafe:integration-test
-  - nc -z -v -w5 $docker_host 8087
+  - nc -z -v -w5 $docker_host 11179
